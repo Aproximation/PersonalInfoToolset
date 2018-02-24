@@ -3,6 +3,7 @@ const gutil = require('gulp-util');
 
 const webpack = require('webpack');
 const webpackConf = require('../conf/webpack.conf');
+const webpackDevConf = require('../conf/webpack-dev.conf');
 const webpackDistConf = require('../conf/webpack-dist.conf');
 const gulpConf = require('../conf/gulp.conf');
 
@@ -14,6 +15,10 @@ gulp.task('webpack:watch', done => {
   webpackWrapper(true, webpackConf, done);
 });
 
+gulp.task('webpack:nonminif', done => {
+  process.env.NODE_ENV = 'developer';
+  webpackWrapper(false, webpackDevConf, done);
+});
 gulp.task('webpack:dist', done => {
   process.env.NODE_ENV = 'production';
   webpackWrapper(false, webpackDistConf, done);
