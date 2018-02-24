@@ -27,7 +27,7 @@ module.exports = {
         test: /\.(css|scss)$/,
         loaders: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'css-loader?sass-loader!postcss-loader'//minimize!
+          use: 'css-loader?minimize!sass-loader!postcss-loader'//
         })
       },
       {
@@ -49,10 +49,10 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
     }),
-    // new webpack.optimize.UglifyJsPlugin({
-    //   output: {comments: false},
-    //   compress: {unused: true, dead_code: true, warnings: false} // eslint-disable-line camelcase
-    // }),
+    new webpack.optimize.UglifyJsPlugin({
+      output: {comments: false},
+      compress: {unused: true, dead_code: true, warnings: false} // eslint-disable-line camelcase
+    }),
     new ExtractTextPlugin('index-[contenthash].css'),
     new webpack.optimize.CommonsChunkPlugin({name: 'vendor'}),
     new webpack.LoaderOptionsPlugin({
