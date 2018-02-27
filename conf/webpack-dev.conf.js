@@ -76,7 +76,12 @@ module.exports = {
       '.ts',
       '.tsx'
     ]
-  },
+  },  externals: {
+    fs: '{}',
+    tls: '{}',
+    net: '{}',
+    console: '{}'
+    },
   entry: {
     app: `./${conf.path.src('index')}`,
     vendor: Object.keys(pkg.dependencies)

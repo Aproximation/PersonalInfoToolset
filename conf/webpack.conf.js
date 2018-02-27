@@ -75,7 +75,12 @@ module.exports = {
       '.ts',
       '.tsx'
     ]
-  },
+  },  externals: {
+    fs: '{}',
+    tls: '{}',
+    net: '{}',
+    console: '{}'
+    },
   entry: [
     'webpack/hot/dev-server',
     'webpack-hot-middleware/client',

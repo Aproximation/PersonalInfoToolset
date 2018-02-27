@@ -3,6 +3,7 @@ import {Header} from './header';
 import {Title} from './title';
 import {Techs} from './techs/techs';
 import {Footer} from './footer';
+import {Search} from './search';
 
 const styles = {
   container: {
@@ -25,6 +26,7 @@ export class Main extends React.Component<IMainProps, IMainState> {
   render() {
     return (
       <div >
+        <Search />
         <Header/>
         <main >
           <Title/>
