@@ -4,7 +4,9 @@
     "es6-promise": "^4.0.5",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "xhr-promise": "^2.0.0",
+    "xhr-promise-redux": "^1.2.1"
   },
   "devDependencies": {
     "react-addons-test-utils": "^15.4.2",
